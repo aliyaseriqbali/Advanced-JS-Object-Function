@@ -191,28 +191,54 @@
 // game();
 
 //IIFE
-(function () {
-    var score = Math.random() * 10;
-    console.log(score >= 5);
-})();
+// (function () {
+//     var score = Math.random() * 10;
+//     console.log(score >= 5);
+// })();
 
 
-(function (goodLuck) {
-    var score = Math.random() * 10;
-    console.log(score >= 5 - goodLuck);
-})(5);
+// (function (goodLuck) {
+//     var score = Math.random() * 10;
+//     console.log(score >= 5 - goodLuck);
+// })(5);
 
 
+/////////////////////////////////////
+//// Closures
 
+// function retirement(retirementAge) {
+//     var a = ' years left until retirement.';
+//     return function (yearOfBirth) {
+//         var age = 2016 - yearOfBirth;
+//         console.log((retirementAge - age) + a)
+//     }
+// }
+// var retirementUS = retirement(66);
+// var retirementGermany = retirement(65);
+// var retirementIceland = retirement(67);
 
+// retirementGermany(1990);
+// retirementUS(1990);
+// retirementIceland(1990);
 
+/////////////////////////////////////
+//// Closures Challenge 1
 
+function interviewQuestion(job) {
+    return function (name) {
+        if (job === 'teacher') {
+            console.log('What are you teaching, ' + name + '?');
+        } else if (job === 'designer') {
+            console.log('What are you designing, ' + name + '?');
+        } else {
+            console.log('What do you do, ' + name + '?');
+        }
+    }
+}
 
-
-
-
-
-
+interviewQuestion('teacher')('John');
+interviewQuestion('designer')('Mark');
+interviewQuestion()('Jane');
 
 
 
