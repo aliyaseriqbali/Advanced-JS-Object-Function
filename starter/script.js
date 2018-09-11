@@ -165,16 +165,59 @@
 /////////////////////////////////////
 //// Functions returning functions - My own
 
-function interviewQuestion(job) {
-    if (job === 'teacher') {
-        return function (name) { console.log('What do you teach? ' + name) }
-    } else if (job === 'designer') {
-        return function (name) { console.log('What do you design? ' + name) }
-    } else {
-        return function (name) { console.log('what do you do? ' + name) }
-    }
-}
+// function interviewQuestion(g    ) {
+//     if (job === 'teacher') {
+//         return function (name) { console.log('What do you teach? ' + name) }
+//     } else if (job === 'designer') {
+//         return function (name) { console.log('What do you design? ' + name) }
+//     } else {
+//         return function (name) { console.log('what do you do? ' + name) }
+//     }
+// }
 
-interviewQuestion('designer')('Mark');
-interviewQuestion('teacher')('John');
-interviewQuestion()('Jane');
+// interviewQuestion('designer')('Mark');
+// interviewQuestion('teacher')('John');
+// interviewQuestion()('Jane');
+
+
+/////////////////////////////////////
+//// IIFE = Immediately invoked function expression
+
+// Regular function
+// function game() {
+//     var score = Math.random() * 10;
+//     console.log(score >= 5);
+// }
+// game();
+
+//IIFE
+(function () {
+    var score = Math.random() * 10;
+    console.log(score >= 5);
+})();
+
+
+(function (goodLuck) {
+    var score = Math.random() * 10;
+    console.log(score >= 5 - goodLuck);
+})(5);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
